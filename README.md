@@ -10,13 +10,17 @@
     $python3 --version
     
 * Step 2: install virtaul machine:
+    
     pyvenv venv3
 
 * Step 3: start your python 3 virtaul machine:
+    
     source venv3/bin/activate
 
 * Step 4: install python package in your python 3 virtul machine
+    
     pip3 install  -r requirements.txt
 
 * Step 5: stat your python flacon server:
+    
     uwsgi --http :8000 --wsgi-file run.py --callable app --enable-threads  --thunder-lock
