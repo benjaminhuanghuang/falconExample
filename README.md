@@ -4,11 +4,11 @@
 # Setup for Python 3.5
 
 - Step 1: install python 3.5
+    
     $brew install python3
 
-    python3 --version
-    Python 3.5.2
-
+    $python3 --version
+    
 - Step 2: install virtaul machine:
     pyvenv venv3
 
