@@ -22,7 +22,7 @@ class Things:
         resp.status = falcon.HTTP_200
 
 
-app = falcon.API()
+app = falcon.API(middleware=[])
 app.add_route("/things", Things())
 
 # This part is for convenience in development only
