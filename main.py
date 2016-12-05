@@ -3,6 +3,7 @@ import json
 import falcon
 import mimetypes
 from wsgiref import simple_server
+import json
 
 
 class Things:
@@ -10,10 +11,19 @@ class Things:
         res.status = falcon.HTTP_200
         res.body = json.dumps([{"id": 1, "name": "Thingie"}, {"id": 2, "name": "Thinger"}])
 
+    def on_post(self, req, resp):
+        body = req.stream.read()
+        params = json.loads(body.decode('utf-8'))
+        result = params
+
+        # resp.body = json.dumps(json.JSONEncoder().encode(result))
+        resp.body = json.dumps(result)
+        resp.set_header('Powered-By', 'Falcon')
+        resp.status = falcon.HTTP_200
+
 
 app = falcon.API()
 app.add_route("/things", Things())
-
 
 # This part is for convenience in development only
 if __name__ == "__main__":
@@ -28,10 +38,11 @@ if __name__ == "__main__":
         else:
             res.status = falcon.HTTP_404
 
+
     app.add_sink(static)
 
     host = "127.0.0.1"
-    port = 8000
+    port = 8888
     httpd = simple_server.make_server(host, port, app)
     print "Serving on %s:%s" % (host, port)
     httpd.serve_forever()
