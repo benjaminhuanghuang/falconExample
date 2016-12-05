@@ -1,7 +1,7 @@
-* Reference
+# Reference
 -   Python Falcon Tutorial
     
-* Setup for Python 3.5
+# Setup for Python 3.5
 
 - Step 1: install python 3.5
     $brew install python3
