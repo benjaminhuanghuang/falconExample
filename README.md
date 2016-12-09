@@ -10,15 +10,15 @@
 
     $python3 --version
     
-* Step 2: install virtaul machine:
+* Step 2: install virtual environment:
     
     $pyvenv venv3
 
-* Step 3: start your python 3 virtaul machine:
+* Step 3: start your python 3 virtual environmente:
     
     $source venv3/bin/activate
 
-* Step 4: install python package in your python 3 virtul machine
+* Step 4: install python package in your python 3 virtual environment
     
     $pip3 install  -r requirements.txt
 
